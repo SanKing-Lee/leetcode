@@ -11,7 +11,7 @@ package com.leetcode.Array;
  */
 
 public class PlusOne {
-    public static void plusOne() {
+    public void plusOne() {
         int[] digits = {9};
         int carry = 1;
         int i = digits.length - 1;
@@ -37,7 +37,7 @@ public class PlusOne {
         }
     }
 
-    public static void print(int[] array) {
+    public void print(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
