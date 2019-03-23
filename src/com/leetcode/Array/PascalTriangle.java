@@ -38,6 +38,7 @@ public class PascalTriangle {
             for(int a:line){
                 System.out.print(a+" ");
             }
+
             System.out.println();
         }
     }
