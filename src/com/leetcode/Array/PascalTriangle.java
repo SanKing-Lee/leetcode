@@ -16,7 +16,7 @@ import java.util.List;
 
 public class PascalTriangle {
     public static void main(String[] args){
-        int numRows = 5;
+        int numRows = 10;
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         int row = 0;
         while(row < numRows){
