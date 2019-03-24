@@ -18,40 +18,42 @@ import java.util.*;
 
 public class AddToArrayFormat {
     public static void main(String[] args) {
-        int[] A = {1};
+        int[] A = {9,9,9,9,9,0,8,8,8,8,8};
         int K = 181;
-        // 用来暂时存储K的各位数
+        // 结果数组
         LinkedList<Integer> num = new LinkedList<>();
-        // 存储K的长度
-        int KLength = 0;
+        // 用来记录A的index
+        int len = A.length - 1;
+        int carry = 0;
         // 获取K的长度
         do {
-            num.addFirst(K % 10);
-            K /= 10;
-            KLength++;
-        } while (KLength < A.length || K != 0);
-        // 将A数组和K数组相加
-        int carry = 0;
-        int resIndex = A.length-1;
-        ListIterator<Integer> iter = num.listIterator(KLength);
-        while (iter.hasPrevious()) {
-            int a = (resIndex >= 0)?A[resIndex]:0;
-            int b = iter.previous();
-            int sum = a + b + carry;
-            if (sum >= 10) {
+            // 如果a的下标小于了0，说明a数组遍历完了，更前面的数就变成了0
+            int a = (len >= 0) ? A[len]:0;
+            // 如果b不够长，那么它就会变成0，0对10取模还是0
+            int b = K%10;
+            // 获得每位相加之后的和
+            int sum = a+b+carry;
+            // 如果相加大于10，将进位设置为1
+            if(sum >= 10){
                 carry = 1;
-                iter.set(sum % 10);
-            } else {
-                carry = 0;
-                iter.set(sum);
+                num.addFirst(sum%10);
             }
-            resIndex--;
-        }
-        if (carry == 1) {
+            // 否则将进位设置为0
+            else{
+                carry = 0;
+                num.addFirst(sum);
+            }
+            // 更新len和k
+            len--;
+            K/=10;
+        } while (len >= 0 || K != 0);
+        // 如果两个数都被遍历完了，carry仍然等于1，说明它们产生了最高位的进位
+        // 在结果前面加上一个1
+        if(carry == 1){
             num.addFirst(1);
         }
-        for (int n : num) {
-            System.out.print(n + " ");
+        for(int a :num){
+            System.out.print(a + " ");
         }
     }
 }
