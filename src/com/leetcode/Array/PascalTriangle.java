@@ -25,7 +25,6 @@ public class PascalTriangle {
             // 存储每一行的数组
             List<Integer> line = new ArrayList<>();
             // 存储每一行数组的开头的index和结尾的index，因为每一行的开头和结尾都是1
-            int i = 0;
             int j = row+1;
             // 对每一行的数组进行遍历
             for(int k = 0; k < j; k++){
