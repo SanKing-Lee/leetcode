@@ -1,4 +1,4 @@
-package com.leetcode.Array;
+package com.leetcode.Array.Simple;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
