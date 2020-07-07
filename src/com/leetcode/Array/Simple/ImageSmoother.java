@@ -1,10 +1,15 @@
+package com.leetcode.Array.Simple;
+
 import javax.management.loading.MLet;
 
 /**
  * Author: Sean
  * Date: Created In 23:10 2020/7/7
  * Title: 图片平滑器
- * Description: 包含整数的二维矩阵 M 表示一个图片的灰度。你需要设计一个平滑器来让每一个单元的灰度成为平均灰度 (向下舍入) ，平均灰度的计算是周围的8个单元和它本身的值求平均，如果周围的单元格不足八个，则尽可能多的利用它们。  来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/image-smoother 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * Description: 包含整数的二维矩阵 M 表示一个图片的灰度。你需要设计一个平滑器来让每一个单元的灰度成为平均灰度 (向下舍入) ，
+ * 平均灰度的计算是周围的8个单元和它本身的值求平均，如果周围的单元格不足八个，则尽可能多的利用它们。
+ * 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/image-smoother 著作权归领扣网络所有。
+ * 商业转载请联系官方授权，非商业转载请注明出处。
  * Version: 0.1
  * Update History:
  * [Date][Version][Author] What has been done;
@@ -48,7 +53,7 @@ public class ImageSmoother {
                         }
                     }
                 }
-                result[i][j] = (int)(Math.floor((double)(sum/count)));
+                result[i][j] = (int)(Math.floor(((double)sum/count)));
             }
         }
         return result;
